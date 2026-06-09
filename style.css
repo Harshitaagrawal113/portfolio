@@ -852,6 +852,7 @@ h2 {
     } */
 
 .hp-focus-digital-product {
+    gap: 2rem;
     height: 100%;
     width: 30%;
     display: flex;
@@ -870,28 +871,33 @@ h2 {
     align-items: start;
     justify-content: center;
     width: 70%;
-    height: 30%;
+    height: 35%;
     gap: 2rem;
 
 }
 
+.focus-softskills {
+    padding-bottom: 2rem;
+}
+
 .focus-gif-div h2 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
 }
 
 .focus-gif-div img {
     filter: invert();
     object-fit: contain;
-    height: 20%;
+    height: 35%;
     width: 20%;
 }
 
 .focus-list {
+    height: 65%;
     display: flex;
     flex-direction: column;
     gap: .5rem;
     align-items: start;
-    justify-content: center;
+    justify-content: start;
 }
 
 .focus-list h2 {
@@ -1440,7 +1446,7 @@ h2 {
     }
 
     .hp-lhs {
-        height: fit-content;
+               height: -webkit-fill-available ;
         width: 20%;
     }
 
@@ -1573,6 +1579,13 @@ h2 {
         padding: 2rem 2rem;
     }
 
+    .hp-work-data-left-down span {
+        font-size: 8rem;
+    }
+    .hp-card-conatiner-div {
+        gap: 4rem;
+    }
+
     .markey-text h1 {
         font-size: 10rem;
         line-height: 11rem;
@@ -1599,16 +1612,16 @@ h2 {
     }
 
     .hp-more-abt {
-        min-height: 40vh;
+        min-height: 60vh;
     }
 
     .hp-lhs {
-        height: 40vh;
+        height: -webkit-fill-available;
         width: 10%;
     }
 
     .hp-rhs {
-        height: 40vh;
+        height: 60vh;
     }
 
     .hp-logos {
@@ -1630,6 +1643,7 @@ h2 {
 
     .hp-focus {
         width: 90%;
+        height: -webkit-fill-available;
     }
 
     .hp-work-sec-data {
@@ -1637,7 +1651,7 @@ h2 {
     }
 
     .hp-card-container {
-        height: 30vh;
+        height: 50vh;
     }
 
     .card-container-left-anchor-text {

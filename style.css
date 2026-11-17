@@ -748,6 +748,53 @@ main {
     border-radius: 0 20px 0 0;
 }
 
+/* Keep the Team Indigo details readable beside the video. */
+.team-indigo-card .card-container-left {
+    gap: 1rem;
+}
+
+.team-indigo-card .card-container-left-anchor-text {
+    position: static;
+}
+
+.team-indigo-left-description {
+    max-width: 92%;
+    margin: 0;
+    font-size: .9rem;
+    line-height: 1.45;
+}
+
+.card-container-right-data.team-indigo-card-data {
+    height: auto;
+    min-height: 10%;
+    align-items: center;
+}
+
+.team-indigo-live-link {
+    color: var(--text);
+    font-size: .75rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.team-indigo-live-link:hover {
+    text-decoration: underline;
+}
+
+/* Hide the browser controls captured in the Team Indigo screen recording. */
+.team-indigo-preview {
+    position: relative;
+    overflow: hidden;
+}
+
+.team-indigo-preview video {
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1.2) translateY(-19.5%);
+    transform-origin: center top;
+}
+
 .card-container-right-img-inverse img {
     border-radius: 20px 0 0 0;
 }
@@ -1199,6 +1246,32 @@ h2 {
 
     .card-container-right-data {
         height: 23%;
+    }
+
+    .team-indigo-card .card-container-left {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        gap: .5rem;
+        padding: 1rem;
+    }
+
+    .team-indigo-card .card-container-left-anchor-text {
+        width: 100%;
+        font-size: 1.35rem;
+    }
+
+    .team-indigo-left-description {
+        max-width: 100%;
+        font-size: .85rem;
+    }
+
+    .card-container-right-data.team-indigo-card-data {
+        height: auto;
+        min-height: 0;
+        justify-content: flex-start;
+        padding: .75rem 1rem;
     }
 
     .card-container-right-img img {

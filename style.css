@@ -750,8 +750,7 @@ main {
 
 /* Keep the Team Indigo details together in a sticky left panel. */
 .team-indigo-info {
-    position: sticky;
-    top: 20%;
+    position: static;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -761,6 +760,7 @@ main {
 
 .team-indigo-project-title {
     color: var(--text);
+    font-family: inherit;
     font-size: 2rem;
     font-weight: 500;
     line-height: 1.15;
@@ -771,6 +771,8 @@ main {
 .team-indigo-description {
     max-width: 92%;
     margin: 0;
+    color: var(--text);
+    font-family: inherit;
     font-size: .9rem;
     line-height: 1.45;
 }
@@ -788,6 +790,77 @@ main {
 .team-indigo-project-title:hover {
     color: var(--text);
     text-decoration: underline;
+}
+
+/* Keep the Focus skills in the portfolio's existing type and color system. */
+.hp-more-abt > .hp-focus {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-rows: minmax(12rem, auto);
+    align-items: start;
+    align-content: center;
+    justify-content: stretch;
+    gap: 2rem 1.5rem;
+    height: auto;
+    min-height: 80vh;
+    padding: 3rem 1.5rem;
+}
+
+.hp-focus-digital-product {
+    width: auto;
+    height: auto;
+    gap: 1rem;
+    justify-content: flex-start;
+}
+
+.hp-focus-digital-product .focus-gif-div {
+    width: 100%;
+    height: auto;
+    gap: .75rem;
+}
+
+.hp-focus-digital-product .focus-gif-div img {
+    width: 2rem;
+    height: 2rem;
+}
+
+.hp-focus-digital-product .focus-list {
+    height: auto;
+    gap: .4rem;
+}
+
+.hp-focus-digital-product .focus-list h2 {
+    color: var(--text);
+    font-family: inherit;
+    font-size: .95rem;
+    line-height: 1.4;
+    text-transform: none;
+}
+
+#focus {
+    scroll-margin-top: 6rem;
+}
+
+@media only screen and (max-width: 991px) {
+    .hp-more-abt > .hp-focus {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        min-height: 0;
+        padding: 2.5rem 1rem;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .hp-more-abt > .hp-focus {
+        grid-template-columns: minmax(0, 1fr);
+        width: 100%;
+        gap: 2rem;
+        padding: 2rem 1.5rem;
+    }
+
+    .hp-focus-digital-product {
+        flex-direction: column;
+    }
+
 }
 
 /* Hide the browser controls captured in the Team Indigo screen recording. */
@@ -1809,4 +1882,319 @@ h2 {
         padding: .75rem 1rem;
     }
 }
+
+/* Arrange Focus as two equal columns across two aligned rows. */
+#focus > .hp-focus-div {
+    width: 15%;
+    height: auto;
+}
+
+#focus > .hp-focus {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(17rem, 1fr));
+    align-items: stretch;
+    align-content: stretch;
+    justify-content: stretch;
+    width: 85%;
+    height: auto;
+    min-height: 80vh;
+    padding: 1rem;
+    gap: 0;
+}
+
+#focus > .hp-focus > .hp-focus-digital-product {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: auto;
+    height: auto;
+    min-width: 0;
+    min-height: 0;
+    padding: 1.5rem;
+    gap: 1rem;
+}
+
+#focus > .hp-focus > .hp-focus-digital-product:nth-child(odd) {
+    border-right: .8px solid var(--text);
+}
+
+#focus > .hp-focus > .hp-focus-digital-product:nth-child(-n + 2) {
+    border-bottom: .8px solid var(--text);
+}
+
+#focus .focus-gif-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: .75rem;
+}
+
+#focus .focus-gif-div img {
+    flex: 0 0 2rem;
+    width: 2rem;
+    height: 2rem;
+}
+
+#focus .focus-gif-div h2 {
+    font-size: 1.25rem;
+    line-height: 1.25;
+}
+
+#focus .focus-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-content: start;
+    width: 100%;
+    height: auto;
+    gap: .65rem 1.25rem;
+}
+
+#focus .focus-list h2 {
+    color: var(--text);
+    font-family: inherit;
+    font-size: .95rem;
+    line-height: 1.4;
+    text-transform: none;
+}
+
+#focus .backend-focus-card .focus-list h2:nth-child(3),
+#focus .backend-focus-card .focus-list h2:nth-child(8) {
+    grid-column: 1 / -1;
+    white-space: nowrap;
+}
+
+@media only screen and (max-width: 767px) {
+    #focus > .hp-focus-div {
+        width: 100%;
+        height: auto;
+        min-height: 8rem;
+    }
+
+    #focus > .hp-focus {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: auto;
+        width: 100%;
+        min-height: 0;
+        padding: .5rem;
+    }
+
+    #focus > .hp-focus > .hp-focus-digital-product {
+        padding: 1.25rem;
+        border-right: 0;
+        border-bottom: .8px solid var(--text);
+    }
+
+    #focus .backend-focus-card .focus-list h2:nth-child(3),
+    #focus .backend-focus-card .focus-list h2:nth-child(8) {
+        white-space: normal;
+    }
+}
+
+/* Four portfolio columns: Front-End, Backend, Tools/Core, and Soft Skills. */
+#focus {
+    min-height: 0 !important;
+    height: auto;
+    margin: 0;
+}
+
+#focus > .hp-focus-div {
+    width: 4.5%;
+    min-width: 3.5rem;
+    height: 80vh;
+    min-height: 80vh;
+    flex: 0 0 4.5%;
+    align-self: stretch;
+    border: 0;
+}
+
+#focus > .hp-focus {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: auto;
+    align-content: start;
+    width: 95.5%;
+    height: auto;
+    min-height: 80vh;
+    padding: 1.5rem 1rem;
+    align-self: flex-start;
+}
+
+#focus > .hp-focus > .hp-focus-digital-product {
+    justify-content: flex-start;
+    padding: .75rem 1.25rem;
+    border: 0;
+    border-bottom: 0;
+    gap: 1rem;
+}
+
+#focus > .hp-focus > .hp-focus-digital-product:nth-child(-n + 2) {
+    border-bottom: 0;
+}
+
+#focus > .hp-focus > .hp-focus-digital-product:nth-child(odd) {
+    border-right: 0;
+}
+
+#focus .hp-logos.hp-focus-responsive {
+    display: block;
+    flex: 0 0 40%;
+    width: 100%;
+    height: 40%;
+    border-right: .8px solid var(--text);
+    border-bottom: .8px solid var(--text);
+}
+
+#focus .hp-about.hp-lhs-responsive {
+    width: 100%;
+    height: 60%;
+    min-height: 0;
+    padding: 0;
+    display: block;
+    position: relative;
+    border-right: .8px solid var(--text);
+    border-bottom: 0;
+}
+
+#focus .hp-about h2,
+#focus .hp-about h3 {
+    position: absolute;
+    left: 50%;
+    white-space: nowrap;
+    transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+#focus .hp-about h2 {
+    top: 50%;
+}
+
+#focus .hp-about h3 {
+    bottom: .75rem;
+    top: auto;
+    transform: translateX(-50%) rotate(-90deg);
+}
+
+#focus .hp-about h3 {
+    font-size: .72rem;
+}
+
+#focus .focus-gif-div {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-height: 6rem;
+    gap: 1rem;
+}
+
+#focus .focus-gif-div h2 {
+    font-size: 1.2rem;
+}
+
+#focus .focus-list {
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    #focus > .hp-focus-div {
+        width: 4.3%;
+        min-width: 0;
+        flex-basis: 4.3%;
+        min-height: 80vh;
+    }
+
+    #focus > .hp-focus {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto auto;
+        align-content: start;
+        width: 95.7%;
+    }
+
+    #focus > .hp-focus > .hp-focus-digital-product {
+        padding: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    #focus > .hp-focus-div {
+        width: 5.8%;
+        min-width: 0;
+        flex-basis: 5.8%;
+        height: 100vh;
+    }
+
+    #focus > .hp-focus {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto auto;
+        align-content: start;
+        width: 94.2%;
+        height: fit-content !important;
+        min-height: 80vh;
+    }
+
+    #focus > .hp-focus > .hp-focus-digital-product {
+        padding: 1.5rem 1rem;
+    }
+
+    #focus .hp-about.hp-lhs-responsive {
+        height: 60%;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    #focus > .hp-focus-div {
+        width: 100%;
+        min-height: 0;
+    }
+
+    #focus > .hp-focus {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: auto;
+        width: 100%;
+    }
+
+    #focus > .hp-focus > .hp-focus-digital-product {
+        padding: 1.5rem 1rem;
+        border-bottom: .8px solid var(--text);
+    }
+
+    #focus > .hp-focus-div {
+        min-width: 0;
+        min-height: 0;
+        height: auto;
+        flex: 0 0 auto;
+        width: 100%;
+        border-bottom: 0;
+    }
+
+    #focus .hp-logos.hp-focus-responsive {
+        display: none;
+    }
+
+    #focus .hp-about.hp-lhs-responsive {
+        display: flex;
+        height: 4rem;
+        padding: 0;
+        border-right: 0;
+        position: static;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    #focus .hp-about h2,
+    #focus .hp-about h3 {
+        position: static;
+        transform: none;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    #focus .backend-focus-card .focus-list h2 {
+        font-size: .78rem;
+        white-space: nowrap;
+    }
+}
+
 

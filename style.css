@@ -748,26 +748,31 @@ main {
     border-radius: 0 20px 0 0;
 }
 
-/* Keep the Team Indigo details readable beside the video. */
-.team-indigo-card .card-container-left {
+/* Keep the Team Indigo details together in a sticky left panel. */
+.team-indigo-info {
+    position: sticky;
+    top: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     gap: 1rem;
+    width: 100%;
 }
 
-.team-indigo-card .card-container-left-anchor-text {
-    position: static;
+.team-indigo-project-title {
+    color: var(--text);
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.15;
+    text-decoration: none;
+    text-transform: uppercase;
 }
 
-.team-indigo-left-description {
+.team-indigo-description {
     max-width: 92%;
     margin: 0;
     font-size: .9rem;
     line-height: 1.45;
-}
-
-.card-container-right-data.team-indigo-card-data {
-    height: auto;
-    min-height: 10%;
-    align-items: center;
 }
 
 .team-indigo-live-link {
@@ -779,7 +784,8 @@ main {
     text-transform: none;
 }
 
-.team-indigo-live-link:hover {
+.team-indigo-live-link:hover,
+.team-indigo-project-title:hover {
     color: var(--text);
     text-decoration: underline;
 }
@@ -1753,31 +1759,29 @@ h2 {
 
 }
 
-/* Keep the Team Indigo project card stacked like the other cards on tablet and mobile. */
+/* Stack the left panel above its video on smaller screens. */
 @media only screen and (max-width: 991px) and (min-width: 280px) {
     .hp-card-container.team-indigo-card {
         flex-direction: column;
-        align-items: stretch;
         height: fit-content;
         padding: 1rem .5rem;
         border-radius: 10px;
     }
 
     .team-indigo-card .card-container-left {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: auto;
-        gap: .5rem;
-        padding: 1rem;
+        display: none;
     }
 
-    .team-indigo-card .card-container-left-anchor-text {
-        width: 100%;
+    .team-indigo-info {
+        position: static;
+        gap: .5rem;
+    }
+
+    .team-indigo-project-title {
         font-size: 1.35rem;
     }
 
-    .team-indigo-left-description {
+    .team-indigo-description {
         max-width: 100%;
         font-size: .85rem;
     }
@@ -1787,7 +1791,7 @@ h2 {
         height: auto;
     }
 
-    .team-indigo-card .card-container-right-img {
+    .team-indigo-card .team-indigo-preview {
         width: 100%;
         height: auto;
         aspect-ratio: 16 / 9;
@@ -1800,10 +1804,8 @@ h2 {
     }
 
     .card-container-right-data.team-indigo-card-data {
-        width: 100%;
         height: auto;
         min-height: 0;
-        justify-content: flex-end;
         padding: .75rem 1rem;
     }
 }

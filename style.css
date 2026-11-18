@@ -750,7 +750,8 @@ main {
 
 /* Keep the Team Indigo details together in a sticky left panel. */
 .team-indigo-info {
-    position: static;
+    position: sticky;
+    top: 20%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -2013,12 +2014,12 @@ h2 {
 #focus > .hp-focus {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     grid-template-rows: auto;
-    align-content: start;
+    align-content: center;
     width: 95.5%;
-    height: auto;
+    height: 80vh;
     min-height: 80vh;
     padding: 1.5rem 1rem;
-    align-self: flex-start;
+    align-self: stretch;
 }
 
 #focus > .hp-focus > .hp-focus-digital-product {
@@ -2038,12 +2039,22 @@ h2 {
 }
 
 #focus .hp-logos.hp-focus-responsive {
-    display: block;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
     flex: 0 0 40%;
     width: 100%;
     height: 40%;
+    padding-top: 1rem;
+    overflow: hidden;
     border-right: .8px solid var(--text);
     border-bottom: .8px solid var(--text);
+}
+
+#focus .hp-logos.hp-focus-responsive img {
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;
 }
 
 #focus .hp-about.hp-lhs-responsive {
@@ -2191,6 +2202,10 @@ h2 {
 }
 
 @media only screen and (min-width: 1200px) {
+    #focus > .hp-focus > .hp-focus-digital-product {
+        justify-content: center;
+    }
+
     #focus .backend-focus-card .focus-list h2 {
         font-size: .78rem;
         white-space: nowrap;

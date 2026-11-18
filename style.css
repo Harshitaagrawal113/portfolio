@@ -2203,7 +2203,7 @@ h2 {
 
 @media only screen and (min-width: 1200px) {
     #focus > .hp-focus > .hp-focus-digital-product {
-        justify-content: center;
+        justify-content: flex-start;
     }
 
     #focus .backend-focus-card .focus-list h2 {

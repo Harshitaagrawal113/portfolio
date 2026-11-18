@@ -1999,6 +1999,8 @@ h2 {
     min-height: 0 !important;
     height: auto;
     margin: 0;
+    view-timeline-name: --focus-section-scroll;
+    view-timeline-axis: block;
 }
 
 #focus > .hp-focus-div {
@@ -2055,6 +2057,22 @@ h2 {
     width: 2rem;
     height: 2rem;
     object-fit: contain;
+    animation-name: focus-scroll-spin;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-timeline: --focus-section-scroll;
+    animation-range: entry 0% exit 100%;
+}
+
+@keyframes focus-scroll-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(1080deg);
+    }
 }
 
 #focus .hp-about.hp-lhs-responsive {
